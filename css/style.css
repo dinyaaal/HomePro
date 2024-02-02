@@ -940,14 +940,14 @@ textarea.input {
   display: -ms-grid;
   display: grid;
   min-width: 100%;
-  -ms-grid-columns: (1fr)[4];
-  grid-template-columns: repeat(4, 1fr);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .advantages-hero__item {
@@ -2029,12 +2029,6 @@ textarea.input {
     margin-bottom: 3rem;
   }
 
-  .advantages-hero {
-    -webkit-column-gap: 4rem;
-       -moz-column-gap: 4rem;
-            column-gap: 4rem;
-  }
-
   .decor-hero__item {
     width: 26.25rem;
   }
@@ -2234,6 +2228,21 @@ textarea.input {
   }
 }
 
+@media (min-width: 118.81125em) {
+  .advantages-hero {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 118.81125em) and (min-width: 91.25em) {
+  .advantages-hero {
+    -webkit-column-gap: 4rem;
+       -moz-column-gap: 4rem;
+            column-gap: 4rem;
+  }
+}
+
 @media (max-width: 48em) {
   .menu__list {
     -webkit-column-gap: 0.9375rem;
@@ -2293,12 +2302,6 @@ textarea.input {
 
   .hero__main:not(:last-child) {
     margin-bottom: 1.5rem;
-  }
-
-  .advantages-hero {
-    -webkit-column-gap: 1.25rem;
-       -moz-column-gap: 1.25rem;
-            column-gap: 1.25rem;
   }
 
   .about {
@@ -2489,16 +2492,8 @@ textarea.input {
 }
 
 @media (max-width: 118.75em) {
-  .advantages-hero {
-    -ms-grid-columns: (1fr)[2];
-    grid-template-columns: repeat(2, 1fr);
-    -webkit-column-gap: 0rem;
-       -moz-column-gap: 0rem;
-            column-gap: 0rem;
-  }
-
   .advantages-hero__item {
-    padding: 0.9375rem 1.5rem;
+    padding: 0.9375rem;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -3046,22 +3041,6 @@ textarea.input {
 @supports not (margin-bottom: clamp( 1.5rem , 1.0789473684rem  +  2.1052631579vw , 3rem )) {
     .hero__main:not(:last-child) {
       margin-bottom: calc(1.5rem + 1.5 * (100vw - 20rem) / 71.25);
-    }
-}
-
-@supports ((-moz-column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem )) or (column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem ))) {
-    .advantages-hero {
-      -webkit-column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem );
-         -moz-column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem );
-              column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem );
-    }
-}
-
-@supports not ((-moz-column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem )) or (column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem ))) {
-    .advantages-hero {
-      -webkit-column-gap: calc(1.25rem + 2.75 * (100vw - 20rem) / 71.25);
-         -moz-column-gap: calc(1.25rem + 2.75 * (100vw - 20rem) / 71.25);
-              column-gap: calc(1.25rem + 2.75 * (100vw - 20rem) / 71.25);
     }
 }
 
@@ -3664,6 +3643,32 @@ textarea.input {
       width: calc(12.5rem + 13.75 * (100vw - 61.99875rem) / 29.25125);
     }
 }
+}
+
+@media (min-width: 118.81125em) and (min-width: 20em) and (max-width: 91.25em) {
+@supports ((-moz-column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem )) or (column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem ))) {
+    .advantages-hero {
+      -webkit-column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem );
+         -moz-column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem );
+              column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem );
+    }
+}
+
+@supports not ((-moz-column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem )) or (column-gap: clamp( 1.25rem , 0.4780701754rem  +  3.8596491228vw , 4rem ))) {
+    .advantages-hero {
+      -webkit-column-gap: calc(1.25rem + 2.75 * (100vw - 20rem) / 71.25);
+         -moz-column-gap: calc(1.25rem + 2.75 * (100vw - 20rem) / 71.25);
+              column-gap: calc(1.25rem + 2.75 * (100vw - 20rem) / 71.25);
+    }
+}
+}
+
+@media (min-width: 118.81125em) and (max-width: 20em) {
+  .advantages-hero {
+    -webkit-column-gap: 1.25rem;
+       -moz-column-gap: 1.25rem;
+            column-gap: 1.25rem;
+  }
 }
 
 @media (min-width: 47.99875em) and (max-width: 91.25em) {
