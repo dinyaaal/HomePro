@@ -14,6 +14,29 @@
             document.documentElement.classList.add(className);
         }));
     }
+    let isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
+        }
+    };
+    function addTouchClass() {
+        if (isMobile.any()) document.documentElement.classList.add("touch");
+    }
     function addLoadedClass() {
         if (!document.documentElement.classList.contains("loading")) window.addEventListener("load", (function() {
             setTimeout((function() {
@@ -242,6 +265,12 @@
     function menuInit() {
         if (document.querySelector(".icon-menu")) document.addEventListener("click", (function(e) {
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
+                bodyLockToggle();
+                document.documentElement.classList.toggle("menu-open");
+            }
+        }));
+        if (document.querySelector(".menu")) document.addEventListener("click", (function(e) {
+            if (bodyLockStatus && !e.target.closest(".menu__body")) {
                 bodyLockToggle();
                 document.documentElement.classList.toggle("menu-open");
             }
@@ -4284,6 +4313,7 @@
     }
     window["FLS"] = 0;
     isWebp();
+    addTouchClass();
     addLoadedClass();
     menuInit();
     spollers();
