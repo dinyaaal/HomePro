@@ -1776,7 +1776,7 @@ textarea.input {
   position: absolute;
   width: 100%;
   aspect-ratio: 581/45;
-  top: 0;
+  top: -0.0625rem;
   left: 0;
 }
 
@@ -1947,7 +1947,7 @@ textarea.input {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .talk__image img {
+  .talk__image * {
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2/3;
