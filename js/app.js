@@ -244,10 +244,7 @@
             if (bodyLockStatus && e.target.closest(".icon-menu")) {
                 bodyLockToggle();
                 document.documentElement.classList.toggle("menu-open");
-            }
-        }));
-        if (document.querySelector(".menu")) document.addEventListener("click", (function(e) {
-            if (bodyLockStatus && !e.target.closest(".menu__body")) {
+            } else if (document.documentElement.classList.contains("menu-open") && bodyLockStatus && !e.target.closest(".menu__body")) {
                 bodyLockToggle();
                 document.documentElement.classList.toggle("menu-open");
             }
